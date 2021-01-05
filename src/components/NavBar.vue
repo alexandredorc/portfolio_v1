@@ -4,6 +4,14 @@
       <div class="logo">
         <p><a href="#first-page">Portfolio</a></p>
       </div>
+      <div class="navburger" @click="change()">
+        <div class="burger">
+          <span class="ham buns"></span>
+          <span class="ham filling"></span>
+          <span class="ham buns bunsinv"></span>
+        </div>
+        
+      </div>
       <div class="nav-items-box">
         <div class="nav-items">
           <p><a href="#second-page">about me</a></p>
@@ -27,28 +35,30 @@
 </template>
 
 <script>
-export default {};
+export default{
+  name: 'Nav',
+  data:function(){
+    return{state:1}
+  },
+  methods: {
+    async change(){
+      this.state=1-this.state;
+      if (this.state==1){
+        document.getElementsByClassName("burger")[0].classList.add("ham--is-expanded")
+        console.log(document.getElementsByClassName("burger")[0].className);
+        
+      }
+      else{
+        document.getElementsByClassName("burger")[0].classList.remove("ham--is-expanded");
+        console.log(document.getElementsByClassName("burger")[0].className);
+      }
+    }
+  }
+}
 </script>
 
 <style scoped>
-@media all and (max-width: 860px) {
-  .nav-items-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    flex: 1 !important;
-  }
-}
-@media all and (max-width: 634px) {
-  .nav-items-box {
-    display: none !important;
-  }
-  .logo {
-    width: 100% !important;
-    text-align: center;
-  }
-}
+
 .navBox {
   width: 100%;
   background-color: none;
@@ -62,13 +72,66 @@ export default {};
   align-items: center;
   margin: 0 30px;
 }
-.nav-items-box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  width: 50%;
+input{
+  display: none;
 }
+.navburger{
+  height: 60px;
+  width: 60px;
+  position: absolute;
+  margin: 0 auto;
+  border-radius: 20%;
+  border-color: white;
+  background-color: white;
+}
+.burger{
+  height: 20px;
+  width: 30px;
+  position: relative;
+  display: block;
+  display: inline-block;
+  
+  margin: 25%;
+}
+
+.ham{
+  width: 30px;
+  height: 3px;
+  background-color:rgb(121, 121, 121);
+  display: block;
+  position: absolute;
+}
+.buns {
+  width: 100%;
+  display: block;
+  transition: top 0.35s cubic-bezier(0.645, 0.045, 0.355, 1);
+  height: 3px;
+  top: 0px;
+}
+.bunsinv {
+  top: 100%;
+}
+.filling{
+  height: 3px;
+  top: 49%;
+}
+.ham--is-expanded .buns{
+  top: 10px;
+  transform: rotate(45deg);
+  transition: top 0.35s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.35s cubic-bezier(0.645, 0.045, 0.355, 1) 0.35s;
+  }
+.ham--is-expanded .bunsinv{
+  top: 10px;
+  transform: rotate(-45deg);
+  }
+.ham--is-expanded .filling{
+  transition: opacity 0.35s linear 0.175s;
+  opacity: 0;
+}
+
+
+
+
 p,
 .nav-items {
   color: var(--brown);
@@ -76,10 +139,13 @@ p,
   letter-spacing: 0.075em;
   font-style: normal;
   font-size: 18px;
+
 }
 .logo p {
+
   font-size: 36px;
   cursor: pointer;
+  display: inline-block;
 }
 .nav-items {
   font-size: 14px;
@@ -110,12 +176,7 @@ p,
   margin: 5px 0;
   padding: 0;
 }
-span {
-  width: 110%;
-  transition: all ease 200ms;
-  opacity: 0;
-  margin: 0;
-}
+
 .nav-items:hover span {
   opacity: 1;
 }

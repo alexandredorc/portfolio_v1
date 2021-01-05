@@ -92,8 +92,6 @@ export default {
   position: absolute;
   z-index: 1;
   overflow-y: scroll;
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
 }
 @media all and (max-width: 768px) {
   .pages {
@@ -106,8 +104,6 @@ export default {
 .pages-item {
   width: 100%;
   height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: normal;
 }
 
 a {
