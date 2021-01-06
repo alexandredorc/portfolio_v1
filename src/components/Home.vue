@@ -8,12 +8,12 @@
                             </strong>
                         </h1>
                         <h2 class="text-item">
-                            My name is Alexandre Dorcival <br> and this is my portfolio
+                            My name is Dorcival Alexandre<br> and this is my portfolio
                         </h2>
                         <h3 class="text-item">
                             I am a student at the IMT Lille Douai engineering school <br>
                             I am keen on science and IT <br>
-                            <br>
+                           
                         </h3>
                 </div>
 
@@ -62,14 +62,12 @@ export default {
     brand.addEventListener("mouseleave", function() {
       content.style.width = "0";
       content.style.padding = "10px 0px 10px 0px";
-      content.style.background = " ";
       content.firstElementChild.style.transform ='scale(0,1)';
     });
     brand.addEventListener("mouseover", function() {
       content.style.width = "auto";
       content.style.padding = "10px 40px 10px 30px" ;
       content.firstElementChild.style.transform ='scale(1)';
-      console.log('test');
     });
   },
 
@@ -141,8 +139,9 @@ p {
 .text{
   font-size: 25px;
   width:50% ;
-  
-  background: #ffffffb9;
+  padding: 10px 0;
+  background: #ffffff60;
+  float: left;
 }
 
 .brand {
@@ -153,12 +152,12 @@ p {
   align-items: center;
   justify-content: space-between;
   display: flex;
-  background: #ffffffb9;
+  background: #ffffff1f;
 }
 .collapsable {
   width:0;
   padding:10px 0px 10px 0px;
-  background: linear-gradient( #ffffff, #383838, #818181);
+  background: linear-gradient(0.25turn , #353535c7, #ffffff00);
   border-left: solid #2c2c2c 5px;
   transition: 0.5s;
 }
@@ -170,6 +169,7 @@ p {
 .brand-title{
   writing-mode: vertical-rl;
   margin-right: 20px;
+  padding-left: 20px;
 }
 
 .brand p {

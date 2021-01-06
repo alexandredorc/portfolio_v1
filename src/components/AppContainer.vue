@@ -38,7 +38,7 @@ export default {
 <style>
 @media all and (max-width: 1440px) {
   .down {
-    font-size: 15px !important;
+    font-size: 30px !important;
     border: 2px solid var(--txt) !important;
     width: 20px !important;
     height: 20px !important;
@@ -94,6 +94,9 @@ export default {
   overflow-y: scroll;
   background-image: url('~@/assets/patern.png');
   background-size:100% 100%;
+  
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 @media all and (max-width: 768px) {
   .pages {
@@ -106,6 +109,9 @@ export default {
 .pages-item {
   width: 100%;
   height: 100vh;
+  padding-top: 50px;
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
 }
 
 a {

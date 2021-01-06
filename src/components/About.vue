@@ -1,16 +1,24 @@
 <template>
     <div class="boxAll">
         <div class="content">
-            <div class="top">
-                <div>
-                    <h1 style="text-decoration: underline;">About Me</h1>
-                    I'm a third year student at 
-                    <a class="lien" href="http://imt-lille-douai.fr/en/"> IMT Lille Douai</a><br>
-                    it's a generalist engineering school, <br>
-                    I wish to specialise in computer science and industrial
-                </div>
-                <div class="myTechs">
-                    <h3>These are the Technologies with which I work</h3>
+          <div class="collapse-list">
+            <div class="collapse-item">
+              <div class="collapse-title">
+                About Me 
+              </div>
+              <div class="collapse-content">
+                I'm a third year student at 
+                <a class="lien" href="http://imt-lille-douai.fr/en/"> IMT Lille Douai</a><br>
+                it's a generalist engineering school, <br>
+                I wish to specialise in computer science and industrial
+              </div>
+            </div>
+            <div class="collapse-item">
+              <div class="collapse-title">
+                These are the Technologies with which I work
+              </div>
+              <div class="collapse-content">
+                  <div class="myTechs">
                     <div class="techs">
                       <div class="tech">HTML</div>
                       <div class="tech">CSS</div>
@@ -24,15 +32,19 @@
                       <div class="tech">Django</div>
                     </div>
                 </div>
+              </div>
             </div>
-            <div class="bottom">
-              <h4>
+            <div class="collapse-item">
+              <div class="collapse-title">
                 My other activities
-              </h4>
-              I enjoy music, cinema, and Traveling. 
-              <br> I have traveled all around the world and made different
-              <br> linguistics travels
+              </div>
+              <div class="collapse-content">
+                I enjoy music, cinema, and Traveling. 
+            <br> I have traveled all around the world and made different
+            <br> linguistics travels
+              </div>
             </div>
+          </div>
         </div>
         <a href="#third-page">
             <div class="down">
@@ -47,8 +59,39 @@ export default {
   data() {
     return {
       observe: 0,
+      active: -1
     };
   },
+  mounted:function(){
+    var coll = document.getElementsByClassName("collapse-title");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function(i) {
+         this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (i==-1){
+          content.style.maxHeight = null;
+          content.style.padding= "0";
+        }
+        else if(this.parentNode.childNodes[i]==this){
+          console.log('test');
+        }
+        else{
+          console.log('test');
+        }
+       
+        
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+          content.style.padding= "0";
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+          content.style.padding= "10px";
+        } 
+      });
+    }
+  }
 };
 </script>
 
@@ -76,34 +119,60 @@ export default {
   align-items: space-between;
   position: relative;
   height: 100% !important;
-  padding-top: 6%;
+  padding-top: 100px;
+  display: flex;
 }
 
 .content {
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
   text-align: left;
-  line-height: 2;
+  line-height: 1.5;
   font-size: 20px;
-}
-
-.top{
+  height: auto;
+  width: auto;
   display: flex;
-  justify-content: space-around;
 }
 
-.bottom{
-  text-align: center;
+.collapse-list{
+  display: flex;
+  flex-direction: column;
+  float: right;
+  margin: 20px 150px 20px 70px;
+}
+
+.collapse-title{
+  background-color: rgba(167, 167, 167, 0.685);
+  padding: 10px;
+}
+.collapse-title:hover{
+  background-color: rgba(0, 0, 0, 0.726);
+}
+.collapse-title:before{
+  content: '\002B';
+  color: black;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.collapse-content{
+  background-color: rgba(209, 209, 209, 0.418);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+.active:before{
+  content: "\2212";
 }
 
 .myTechs{
   width:40%;
-  float: right;
 }
 
 .down {
-  color: black;
+  color: rgb(255, 255, 255);
   width: 100%;
   height: 30px;
   border-radius: 100%;

@@ -64,7 +64,7 @@ export default{
 </script>
 
 <style scoped>
-@import url(//fonts.googleapis.com/css?family=Great+Vibes);
+@import url(//fonts.googleapis.com/css?family=Yellowtail);
 
 
 .navBox {
@@ -79,7 +79,7 @@ export default{
   flex-wrap: wrap;
   align-items: center;
 
-  margin: 10px 30px 0 30px;
+  margin: 0 30px;
 }
 
 .navburger{
@@ -175,7 +175,7 @@ p,
 }
 .logo p {
   margin-left: 80px;
-  font-family: Great Vibes;
+  font-family: Yellowtail;
   font-size: 36px;
   cursor: pointer;
   display: inline-block;
