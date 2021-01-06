@@ -151,7 +151,7 @@ display: inline;
   width: auto;
   align-items: center;
   height: 100%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 p,

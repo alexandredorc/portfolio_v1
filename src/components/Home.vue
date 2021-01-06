@@ -18,38 +18,30 @@
                 </div>
 
                 <div class="brand">
-                <p>
-                    <a href="https://www.facebook.com/profile.php?id=100012304111628" target="_blank"
-                    ><font-awesome-icon :icon="['fab', 'facebook-square']"
-                    /></a>
-                </p>
-                <p>
-                    <a href="https://github.com/alexandredorc" target="_blank"
-                    ><font-awesome-icon :icon="['fab', 'github']"
-                    /></a>
-                </p>
-                <p>
-                    <a
-                    href="https://www.linkedin.com/in/alexandre-dorcival-48a7a21a1/"
-                    target="_blank"
-                    ><font-awesome-icon :icon="['fab', 'linkedin']"/>
-                    </a>
-                </p>
-                <p>
-                    <a
-                    href="https://www.instagram.com/alexslept/"
-                    target="_blank"
-                    ><font-awesome-icon :icon="['fab', 'instagram']"
-                    /></a>
-                </p>
-
+                  <div class="brand-title"> <strong>My contents online</strong></div>
+                  <div class="collapsable">
+                    <div class="coll-content">
+                    <p>
+                        <a href="https://github.com/alexandredorc" target="_blank"
+                        ><font-awesome-icon :icon="['fab', 'github']"
+                        /></a>
+                    </p>
+                    <p>
+                        <a
+                        href="https://www.linkedin.com/in/alexandre-dorcival-48a7a21a1/"
+                        target="_blank"
+                        ><font-awesome-icon :icon="['fab', 'linkedin']"/>
+                        </a>
+                    </p>
+                  </div>
+                  </div>
+                </div>
             </div>
-        </div>
-        <a href="#second-page">
-            <div class="down">
-                <font-awesome-icon :icon="['fas', 'arrow-down']"/>
-            </div>
-        </a>
+            <a href="#second-page">
+                <div class="down">
+                    <font-awesome-icon :icon="['fas', 'arrow-down']"/>
+                </div>
+            </a>
     </div>
 </template>
 
@@ -65,7 +57,22 @@ export default {
       opacity: 0,
       y: -50,
     });
+    var content = document.getElementsByClassName("collapsable")[0];
+    var brand = document.getElementsByClassName("brand")[0]
+    brand.addEventListener("mouseleave", function() {
+      content.style.width = "0";
+      content.style.padding = "10px 0px 10px 0px";
+      content.style.background = " ";
+      content.firstElementChild.style.transform ='scale(0,1)';
+    });
+    brand.addEventListener("mouseover", function() {
+      content.style.width = "auto";
+      content.style.padding = "10px 40px 10px 30px" ;
+      content.firstElementChild.style.transform ='scale(1)';
+      console.log('test');
+    });
   },
+
 };
 </script>
 
@@ -135,16 +142,29 @@ p {
 }
 
 .brand {
+  width: auto;
   position: absolute;
   right: 0;
   top: 0;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding:10px 40px 10px 30px;
-  background: linear-gradient(0.33turn, #585858, #ffffff, #a3a3a3);
-  border-left: solid #2c2c2c 5px;
+  display: flex;
+  
 }
+.collapsable {
+  width:0;
+  padding:10px 40px 10px 30px;
+  background: linear-gradient(0.63turn, #000000, #ffffff, #ec2b2b);
+  border-left: solid #2c2c2c 5px;
+  transition: 0.5s;
+}
+.coll-content{transition: 0.5s;}
+
+.brand-title{
+  writing-mode: vertical-rl;
+  margin-right: 20px;
+}
+
 .brand p {
   color: black;
   font-size: 40px;

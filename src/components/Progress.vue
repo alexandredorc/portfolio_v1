@@ -66,6 +66,9 @@ export default {
       y: -50,
     });
   },
+  created: {
+      
+  }
 };
 </script>
 

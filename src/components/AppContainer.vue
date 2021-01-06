@@ -83,7 +83,7 @@ export default {
 
 @media all and (max-width: 1660px) and (min-width: 769px) {
   .pages {
-    height: 110vh !important;
+    height: 100vh !important;
   }
 }
 .pages {
