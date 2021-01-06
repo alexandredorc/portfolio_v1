@@ -2,13 +2,15 @@
   <div class="navBox">
     <div class="box">
       <div class="logo">
-        <p><!--<a href="#first-page">Portfolio</a>--></p>
+        <p>My Portfolio</p>
       </div>
-      <div class="navburger" @click="change()">
+      <div class="navburger" >
+        <div class="burger-packing" @click="change()">
         <div class="burger">
           <span class="ham buns"></span>
           <span class="ham filling"></span>
           <span class="ham buns bunsinv"></span>
+        </div>
         </div>
         <div class="menu">
             <div class="nav-items-box">
@@ -60,6 +62,8 @@ export default{
 </script>
 
 <style scoped>
+@import url(//fonts.googleapis.com/css?family=Great+Vibes);
+
 
 .navBox {
   width: 100%;
@@ -71,6 +75,7 @@ export default{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+
   margin: 10px 30px 0 30px;
 }
 
@@ -99,7 +104,10 @@ display: inline;
   display: block;
 }
 
-
+.burger-packing{
+  width: 60px;
+  height: 60px;
+}
 .burger{
   height: 20px;
   width: 30px;
@@ -156,7 +164,6 @@ display: inline;
 
 p,
 .nav-items {
-  color: var(--brown);
   font-weight: bold;
   letter-spacing: 0.075em;
   font-style: normal;
@@ -164,7 +171,8 @@ p,
 
 }
 .logo p {
-
+  margin-left: 80px;
+  font-family: Great Vibes;
   font-size: 36px;
   cursor: pointer;
   display: inline-block;

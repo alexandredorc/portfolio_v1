@@ -77,6 +77,8 @@ export default {
 </script>
 
 <style scoped>
+
+
 @media all and (max-width: 1489px) {
   .content {
     width: 100% !important;
@@ -154,7 +156,7 @@ p {
 .collapsable {
   width:0;
   padding:10px 40px 10px 30px;
-  background: linear-gradient(0.63turn, #000000, #ffffff, #ec2b2b);
+  background: linear-gradient( #000000, #ffffff, #525252);
   border-left: solid #2c2c2c 5px;
   transition: 0.5s;
 }
