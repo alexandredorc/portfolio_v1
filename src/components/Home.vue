@@ -141,6 +141,8 @@ p {
 .text{
   font-size: 25px;
   width:50% ;
+  
+  background: #ffffffb9;
 }
 
 .brand {
@@ -151,16 +153,19 @@ p {
   align-items: center;
   justify-content: space-between;
   display: flex;
-  
+  background: #ffffffb9;
 }
 .collapsable {
   width:0;
-  padding:10px 40px 10px 30px;
-  background: linear-gradient( #000000, #ffffff, #525252);
+  padding:10px 0px 10px 0px;
+  background: linear-gradient( #ffffff, #383838, #818181);
   border-left: solid #2c2c2c 5px;
   transition: 0.5s;
 }
-.coll-content{transition: 0.5s;}
+.coll-content{
+  transition: 0.5s;
+  transform: scale(0,1);
+}
 
 .brand-title{
   writing-mode: vertical-rl;
@@ -172,7 +177,7 @@ p {
   font-size: 40px;
 }
 .down {
-  color: black;
+  color: rgb(255, 255, 255);
   width: 30px;
   height: 30px;
   border-radius: 100%;

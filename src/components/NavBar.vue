@@ -1,9 +1,11 @@
 <template>
   <div class="navBox">
     <div class="box">
-      <div class="logo">
-        <p>My Portfolio</p>
-      </div>
+      <a href="#first-page">
+        <div class="logo">
+          <p>My Portfolio</p>
+        </div>
+      </a>
       <div class="navburger" >
         <div class="burger-packing" @click="change()">
         <div class="burger">
@@ -15,7 +17,7 @@
         <div class="menu">
             <div class="nav-items-box">
               <div class="nav-items">
-                <p><a href="#second-page">about me</a></p>
+                <p><a href="#second-page" >about me</a></p>
                 <span></span>
               </div>
             <div class="nav-items">
@@ -67,7 +69,8 @@ export default{
 
 .navBox {
   width: 100%;
-  background-color: none;
+  background-color: white;
+  padding-top: 5px;
   color: rgb(0, 0, 0);
 }
 .box {
@@ -209,7 +212,7 @@ p,
   text-shadow: 5px 5px 3px #505050;
 }
 .nav-items p {
-  margin: 5px 0;
+  margin: 20px 0;
   padding: 0;
 }
 

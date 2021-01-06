@@ -83,7 +83,7 @@ export default {
 
 @media all and (max-width: 1660px) and (min-width: 769px) {
   .pages {
-    height: 100vh !important;
+    height: 100% !important;
   }
 }
 .pages {
@@ -92,6 +92,8 @@ export default {
   position: absolute;
   z-index: 1;
   overflow-y: scroll;
+  background-image: url('~@/assets/patern.png');
+  background-size:100% 100%;
 }
 @media all and (max-width: 768px) {
   .pages {
