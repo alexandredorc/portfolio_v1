@@ -16,6 +16,7 @@
                             <br>
                         </h3>
                 </div>
+
                 <div class="brand">
                 <p>
                     <a href="https://www.facebook.com/profile.php?id=100012304111628" target="_blank"
@@ -41,6 +42,7 @@
                     ><font-awesome-icon :icon="['fab', 'instagram']"
                     /></a>
                 </p>
+
             </div>
         </div>
         <a href="#second-page">
@@ -109,10 +111,13 @@ export default {
   align-items: center;
 }
 .content {
-  display: auto;
+  display: inline-block;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  text-align: left;
+  margin-top: 70px;
+  padding-left:20% ;
+  position: relative;
 }
 span {
   font-weight: bold;
@@ -125,14 +130,20 @@ p {
 }
 
 .text{
-    font-size: 25px;
+  font-size: 25px;
+  width:50% ;
 }
 
 .brand {
-  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  padding:10px 40px 10px 30px;
+  background: linear-gradient(0.33turn, #585858, #ffffff, #a3a3a3);
+  border-left: solid #2c2c2c 5px;
 }
 .brand p {
   color: black;
