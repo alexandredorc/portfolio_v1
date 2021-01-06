@@ -4,7 +4,7 @@
                 <div class="text">
                         <h1 class="text-item">
                             <strong>
-                            Good Morning !!
+                            Hello !!
                             </strong>
                         </h1>
                         <h2 class="text-item">
@@ -139,7 +139,7 @@ p {
 .text{
   font-size: 25px;
   width:50% ;
-  padding: 10px 0;
+  padding: 10px;
   background: #ffffff60;
   float: left;
 }
@@ -170,6 +170,7 @@ p {
   writing-mode: vertical-rl;
   margin-right: 20px;
   padding-left: 20px;
+  border-left: solid #2c2c2c 5px;
 }
 
 .brand p {

@@ -1,47 +1,72 @@
 <template>
     <div class="boxAll">
         <div class="content">
+          <h2>
+            My experiences
+          </h2>
           <div class="collapse-list">
-            <div class="collapse-item">
+            <div class="collapse-head">
+              Professional experiences
+            </div>
+            <div class="collapse-item" @click="collapse(0)">
               <div class="collapse-title">
-                About Me 
+                Exsymol SAM
               </div>
               <div class="collapse-content">
-                I'm a third year student at 
-                <a class="lien" href="http://imt-lille-douai.fr/en/"> IMT Lille Douai</a><br>
-                it's a generalist engineering school, <br>
-                I wish to specialise in computer science and industrial
+                  <strong style="color:  rgb(0, 140, 255);">Development of a Database using the Qualios App </strong> <br>
+                  <i> February– April 2019 – Monaco </i>  <br> 
+                  • Use of JavaScript, JQuery and HTML/CSS <br>
+                  • Development of forms on the Qualios App <br>
+                  • Introduction to project management; learn to write the 
+                  necessary documents <br> for the project and organisation for the
+                  different meeting<br><br>
+                  <a href="https://www.exsymol.com/fr/" class="lien">Exsymol</a>
               </div>
             </div>
-            <div class="collapse-item">
+            <div class="collapse-item" @click="collapse(1)">
               <div class="collapse-title">
-                These are the Technologies with which I work
+                Blocksi SAS
               </div>
               <div class="collapse-content">
-                  <div class="myTechs">
-                    <div class="techs">
-                      <div class="tech">HTML</div>
-                      <div class="tech">CSS</div>
-                      <div class="tech">JavaScript</div>
-                      <div class="tech">Vue.js</div>
-                      <div class="tech">Node.js</div>
-                      <div class="tech">Java</div>
-                      <div class="tech">Git</div>
-                      <div class="tech">GitHub</div>
-                      <div class="tech">Python</div>
-                      <div class="tech">Django</div>
-                    </div>
-                </div>
+                  <strong style="color:  rgb(0, 140, 255);"> Web Development for an EdTech App </strong> <br>
+                  <i> May 2020 – August 2020 – Maribor Slovenia </i><br>
+                  • Testing of different features <br>
+                  • Development of a new feature for the Blocksi App <br>
+                  • Learning the Frameworks NodeJS and VuejS <br><br>
+                  <a href="https://www.blocksi.net/" class="lien">Blocksi</a>
               </div>
             </div>
-            <div class="collapse-item">
+            <div class="collapse-head">
+                extracuricular experiences
+              </div>
+            <div class="collapse-item" @click="collapse(2)">
               <div class="collapse-title">
-                My other activities
+                One to One journey in England
               </div>
               <div class="collapse-content">
-                I enjoy music, cinema, and Traveling. 
-            <br> I have traveled all around the world and made different
-            <br> linguistics travels
+                <strong style="color:  rgb(0, 140, 255);">2012 – 2017</strong>
+                Full immersion in an english family (at least a week each year) <br>
+                for a total of around 2-3 months
+              </div>
+            </div>
+            <div class="collapse-item" @click="collapse(3)">
+              <div class="collapse-title">
+                Linguistic immersion in Argentina
+              </div>
+              <div class="collapse-content">
+                <strong style="color:  rgb(0, 140, 255);">July 2017</strong>
+                Full immersion in an Argentine family for 2 weeks in Buenos Aires
+              </div>
+            </div>
+            <div class="collapse-item" @click="collapse(4)">
+              <div class="collapse-title">
+                Linguistic immersion in Australia
+              </div>
+              <div class="collapse-content">
+                <strong style="color:  rgb(0, 140, 255);">June – August 2016</strong>
+                Full immersion in an Australian family for two months <br>
+                 • one month in holyday <br>
+                 • one month in the <a href="https://www.mfac.edu.au/" class="lien">Matthew Findlers</a> Anglican school as an exchange student
               </div>
             </div>
           </div>
@@ -62,37 +87,36 @@ export default {
       active: -1
     };
   },
-  mounted:function(){
-    var coll = document.getElementsByClassName("collapse-title");
-    var i;
-    
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function(i) {
-         this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (i==-1){
-          content.style.maxHeight = null;
-          content.style.padding= "0";
-        }
-        else if(this.parentNode.childNodes[i]==this){
-          console.log('test');
-        }
-        else{
-          console.log('test');
-        }
-       
-        
-        if (content.style.maxHeight){
-          content.style.maxHeight = null;
-          content.style.padding= "0";
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-          content.style.padding= "10px";
-        } 
-      });
+  methods: {
+    collapse: function(i){
+      
+      var coll = document.getElementsByClassName("collapse-item");
+      
+      coll[i].firstElementChild.classList.toggle("active");
+      var content = coll[i].lastElementChild;
+      console.log(this.active+'  '+i);
+      if (this.active==-1){
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.style.padding= "10px";
+        this.active=i;
+      }
+      else if(this.active==i){
+        content.style.maxHeight = null;
+        content.style.padding= "0";
+        this.active=-1;
+      }
+      else{
+        coll[this.active].firstElementChild.classList.toggle("active");
+        coll[this.active].lastElementChild.style.maxHeight = null;
+        coll[this.active].lastElementChild.style.padding= "0";
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.style.padding= "10px";
+        this.active=i;
+      }
     }
   }
 };
+
 </script>
 
 <style scoped>
@@ -116,29 +140,41 @@ export default {
   flex-wrap: wrap;
   justify-content: space-evenly;
   flex-direction: column;
-  align-items: space-between;
-  position: relative;
   height: 100% !important;
   padding-top: 100px;
-  display: flex;
+  position: relative;
 }
 
 .content {
   flex-wrap: wrap;
   justify-content: space-between;
   text-align: left;
+  align-items: initial;
   line-height: 1.5;
   font-size: 20px;
-  height: auto;
+  height: 70%;
   width: auto;
-  display: flex;
+}
+
+h2{
+  margin-left: 70px;
+  padding: auto;
 }
 
 .collapse-list{
   display: flex;
+  width: 80%;
   flex-direction: column;
   float: right;
-  margin: 20px 150px 20px 70px;
+  margin: 0px 150px 20px 70px;
+}
+
+.collapse-head{
+  background-color: rgb(56, 56, 56);
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 .collapse-title{
@@ -146,7 +182,7 @@ export default {
   padding: 10px;
 }
 .collapse-title:hover{
-  background-color: rgba(0, 0, 0, 0.726);
+  background-color: rgba(0, 0, 0, 0.561);
 }
 .collapse-title:before{
   content: '\002B';
@@ -157,11 +193,17 @@ export default {
 }
 
 .collapse-content{
-  background-color: rgba(209, 209, 209, 0.418);
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;
-  background-color: #f1f1f1;
+  background-color: #f1f1f171;
+}
+
+.active.collapse-title{
+  background-color: #00000083;
+}
+.active.collapse-title:hover{
+  background-color: rgba(0, 0, 0, 0.726);
 }
 .active:before{
   content: "\2212";
@@ -183,12 +225,14 @@ export default {
   cursor: pointer;
   font-size: 20px;
   text-align:center ;
+  margin: auto;
+  padding-left:20px ;
 }
 
  @keyframes lien-hover {
-        from {color: red;}
-        to {color: white;
-            background: red;
+        from {color: black;}
+        to {color: rgb(255, 255, 255);
+            background: rgba(0, 0, 0, 0.548);
             border-bottom: white;
             border-radius: 15px;
             padding: 3px 8px;
@@ -196,9 +240,9 @@ export default {
     }
 
 a.lien{
-    color: red;
+    color: black;
     font-weight: bold;
-    border-bottom:solid red 3px;
+    border-bottom:solid black 3px;
     padding: 0px 8px;
 }
 a.lien:hover{

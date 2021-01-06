@@ -17,7 +17,7 @@
         <div class="menu">
             <div class="nav-items-box">
               <div class="nav-items">
-                <p><a href="#second-page" >about me</a></p>
+                <p><a href="#second-page" >experiences</a></p>
                 <span></span>
               </div>
             <div class="nav-items">
