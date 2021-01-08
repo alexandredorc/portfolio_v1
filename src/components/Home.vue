@@ -13,7 +13,6 @@
                         <h3 class="text-item">
                             I am a student at the IMT Lille Douai engineering school <br>
                             I am keen on science and IT <br>
-                           
                         </h3>
                 </div>
 
@@ -46,8 +45,14 @@
 </template>
 
 <script>
+import CV from 'CV-en-anglais.pdf';
 import { gsap } from "gsap";
 export default {
+  data () {
+    return {
+      publicPath: process.env.BASE_URL
+    }
+  },
   mounted: () => {
     let tl = gsap.timeline();
     tl.from(".text .text-item", { duration: 0.5, opacity: 0, y: -50, stagger: 0.1 });
