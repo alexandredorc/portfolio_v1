@@ -37,7 +37,7 @@
               </div>
             </div>
             <div class="collapse-head">
-                extracuricular experiences
+                Extracuricular experiences
               </div>
             <div class="collapse-item" @click="collapse(2)">
               <div class="collapse-title">
@@ -71,7 +71,7 @@
             </div>
           </div>
         </div>
-        <a href="#third-page">
+        <a href="#fourth-page">
             <div class="down">
                 <font-awesome-icon :icon="['fas', 'arrow-down']"/>
             </div>

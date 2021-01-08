@@ -5,8 +5,9 @@
     </div>
     <div class="pages" id="pages">
         <div class="pages-item" id="first-page"><Home/></div>
-        <div class="pages-item" id="second-page"><Exper/></div>
-        <div class="pages-item" id="third-page"><Projects/></div>
+        <div class="pages-item" id="second-page"><About/></div>
+        <div class="pages-item" id="third-page"><Exper/></div>
+        <div class="pages-item" id="fourth-page"><Projects/></div>
     </div>
     
   </div>
@@ -14,6 +15,7 @@
 
 <script>
 import Home from './Home.vue';
+import About from './About.vue';
 import NavBar from './NavBar.vue';
 import Exper from './Exper.vue';
 import Projects from './Projects';
@@ -22,6 +24,7 @@ export default {
   name: 'App',
   components: {
     Home,
+    About,
     NavBar,
     Exper,
     Projects
@@ -29,7 +32,7 @@ export default {
   data() {
     return {
       index: 0,
-      pages: ["first-page", "second-page", "third-page"],
+      pages: ["first-page", "second-page", "third-page","fourth-page"],
     };
   },
 }

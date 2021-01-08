@@ -1,7 +1,7 @@
 <template>
     <div class="allBox">
         <h1>
-            My Projects
+            Projects
         </h1>
 
     </div>
@@ -26,11 +26,5 @@
   padding-top: 6%;
 }
 
-h1 {
-    text-align: left;
-    margin-top: 20px;
-    margin-left: 15%;
-    text-decoration: underline;
-}
 
 </style>

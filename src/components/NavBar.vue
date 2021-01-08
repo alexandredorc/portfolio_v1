@@ -7,7 +7,7 @@
         </div>
       </a>
       <div class="navburger" >
-        <div class="burger-packing" @click="change()">
+        <div class="burger-packing">
         <div class="burger">
           <span class="ham buns"></span>
           <span class="ham filling"></span>
@@ -17,21 +17,14 @@
         <div class="menu">
             <div class="nav-items-box">
               <div class="nav-items">
-                <p><a href="#second-page" >experiences</a></p>
-                <span></span>
+                <p><a href="#second-page">about</a></p>
               </div>
-            <div class="nav-items">
-              <a href="#third-page"><p>projects</p></a>
-              <span></span>
-            </div>
-            <div class="nav-items">
-              <a href="#fourth-page"><p>my experiences</p></a>
-              <span></span>
-            </div>
-            <div class="nav-items">
-              <a href="#fifth-page"><p>others</p></a>
-              <span></span>
-            </div>
+              <div class="nav-items">
+                <a href="#third-page"><p>experiences</p></a>
+              </div>
+              <div class="nav-items">
+                <a href="#fourth-page"><p>projects</p></a>
+              </div>
           </div>
         </div>
       </div>
@@ -40,27 +33,7 @@
 </template>
 
 <script>
-export default{
-  name: 'Nav',
-  data:function(){
-    return{state:1}
-  },
-  methods: {
-    async change(){
-      this.state=1-this.state;
-      if (this.state==1){
-        document.getElementsByClassName("burger")[0].classList.add("ham--is-expanded")
-        console.log(1);
-        document.querySelector('.navburger').classList.add("open");
-      }
-      else{
-        document.getElementsByClassName("burger")[0].classList.remove("ham--is-expanded");
-        console.log(0);
-        document.querySelector('.navburger').classList.remove("open");
-      }
-    }
-  }
-}
+
 </script>
 
 <style scoped>
@@ -93,8 +66,9 @@ export default{
   transition: 1s;
 }
 
-.open{
-  width: 95%;
+.navburger:hover{
+  width: 90%;
+
 }
 
 .menu{
@@ -111,6 +85,23 @@ display: inline;
   width: 60px;
   height: 60px;
 }
+
+.navburger:hover .buns{
+  top: 10px;
+  transform: rotate(45deg);
+  transition: top 0.50s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.35s cubic-bezier(0.645, 0.045, 0.355, 1) 0.35s;
+}
+
+.navburger:hover .bunsinv{
+top: 10px;
+transform: rotate(-45deg);
+}
+
+.navburger:hover .filling{
+  transition: opacity 0.35s linear 0.175s;
+  opacity: 0;
+}
+
 .burger{
   height: 20px;
   width: 30px;
@@ -142,20 +133,6 @@ display: inline;
   height: 3px;
   top: 50%;
 }
-.ham--is-expanded .buns{
-  top: 10px;
-  transform: rotate(45deg);
-  transition: top 0.50s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.35s cubic-bezier(0.645, 0.045, 0.355, 1) 0.35s;
-  }
-.ham--is-expanded .bunsinv{
-  top: 10px;
-  transform: rotate(-45deg);
-  }
-.ham--is-expanded .filling{
-  transition: opacity 0.35s linear 0.175s;
-  opacity: 0;
-}
-
 
 .nav-items-box{
   display: flex;

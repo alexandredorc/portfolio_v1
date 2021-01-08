@@ -45,7 +45,6 @@
 </template>
 
 <script>
-import CV from 'CV-en-anglais.pdf';
 import { gsap } from "gsap";
 export default {
   data () {
