@@ -22,9 +22,9 @@
               <div class="nav-items">
                 <a href="#third-page"><p>experiences</p></a>
               </div>
-              <div class="nav-items">
+              <!--<div class="nav-items">
                 <a href="#fourth-page"><p>projects</p></a>
-              </div>
+              </div>-->
           </div>
         </div>
       </div>
@@ -67,8 +67,8 @@
 }
 
 .navburger:hover{
-  width: 90%;
-
+  width: max( 500px ,60%);
+  transition: 1s;
 }
 
 .menu{
