@@ -10,15 +10,10 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+This is my portfolio , it is still in development
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+  DONE: Home page, My experiences, nav bar
+  
+  TODO: My projects, about me
+  
+  you can find my CV on my linkedin if needed
