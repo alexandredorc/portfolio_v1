@@ -19,4 +19,4 @@ This is my portfolio , it is still in development
   you can find my CV on my linkedin if needed
 
   You can find my portfolio in the following link:
-  `https://alexandredorc.github.io/portfolio/#/`
+  https://alexandredorc.github.io/portfolio/#/
