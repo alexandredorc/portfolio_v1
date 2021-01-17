@@ -8,7 +8,7 @@
                             </strong>
                         </h1>
                         <h2 class="text-item">
-                            My name is Dorcival Alexandre<br> and this is my portfolio
+                            My name is Alexandre Dorcival<br> and this is my portfolio
                         </h2>
                         <h3 class="text-item">
                             I am a student at the IMT Lille Douai engineering school <br>

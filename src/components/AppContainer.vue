@@ -3,7 +3,7 @@
     <div class="nav">
         <NavBar/>
     </div>
-    <div class="pages" id="pages">
+    <div class="pages" id="pages">  
         <div class="pages-item" id="first-page"><Home/></div>
         <div class="pages-item" id="second-page"><About/></div>
         <div class="pages-item" id="third-page"><Exper/></div>
