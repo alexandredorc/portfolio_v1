@@ -14,6 +14,6 @@ This is my portfolio , it is still in development
 
   DONE: Home page, My experiences, nav bar
   
-  TODO: My projects, about me
+  TODO: My projects
   
   you can find my CV on my linkedin if needed
